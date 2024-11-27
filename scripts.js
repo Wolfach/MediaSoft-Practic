@@ -80,7 +80,7 @@ closeModalBtn.addEventListener('click', () => addModal.classList.remove('active'
 
 searchEl.addEventListener('input', renderContacts);
 
-let addedPlusSeven = false; // Новая переменная для отслеживания
+let addedPlusSeven = false;
 
 document.getElementById('phone').addEventListener('input', e => {
     let value = e.target.value.replace(/\D/g, '');
@@ -88,7 +88,6 @@ document.getElementById('phone').addEventListener('input', e => {
         value = value.substring(0, 11);
     }
 
-    // Добавляем "+7" только если его нет и длина не 0, И если мы его сами не добавили
     if (value.length > 0 && !value.startsWith('+7') && !addedPlusSeven) {
         value = '+7' + value;
         addedPlusSeven = true; // Отмечаем, что мы добавили "+7"
