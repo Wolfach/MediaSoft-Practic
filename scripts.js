@@ -90,11 +90,11 @@ document.getElementById('phone').addEventListener('input', e => {
 
     if (value.length > 0 && !value.startsWith('+7') && !addedPlusSeven) {
         value = '+7' + value;
-        addedPlusSeven = true; // Отмечаем, что мы добавили "+7"
-    } else if (value.length === 0) { // Если поле пустое
+        addedPlusSeven = true;
+    } else if (value.length === 0) {
       addedPlusSeven = false;
-    } else if (value.length < 3 && value.startsWith('+7')){ // Если удалили "+7"
-        value = value.substring(2); // Удаляем "+7" если строка короче 3
+    } else if (value.length < 3 && value.startsWith('+7')){
+        value = value.substring(2);
         addedPlusSeven = false;
     }
 
