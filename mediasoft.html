@@ -1,0 +1,85 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Телефонная книга</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+        } 
+        .contact-list { 
+            margin-top: 20px; 
+        } 
+        .contact-card { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            border: 1px solid #ccc; 
+            padding: 10px; 
+            margin-bottom: 10px; 
+            border-radius: 5px; 
+        } 
+        .contact-info { 
+            display: flex; 
+            align-items: center; 
+            gap: 10px; 
+        } 
+        .contact-info img { 
+            width: 40px; 
+            height: 40px; 
+            border-radius: 50%; 
+        } 
+        .actions button { 
+            margin-left: 5px; 
+        } 
+        #add-modal { 
+            position: fixed; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            background: white; 
+            border: 1px solid #ccc; 
+            padding: 20px; 
+            display: none; 
+        } 
+        #add-modal.active { 
+            display: block; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <h1>Телефонная книга</h1> 
+    <input type="text" id="search" placeholder="Поиск по контактам"> 
+    <button id="add-contact">Добавить контакт</button> 
+     
+    <div class="contact-list" id="contact-list"></div> 
+     
+    <div id="add-modal"> 
+        <h2>Добавить контакт</h2> 
+        <form id="add-contact-form"> 
+            <label> 
+                Имя: 
+                <input type="text" id="name" required> 
+            </label> 
+            <br><br> 
+            <label> 
+                Телефон: 
+                <input type="text" id="phone" placeholder="+7 (___) ___-__-__" required> 
+            </label> 
+            <br><br> 
+            <label> 
+                <input type="checkbox" id="is-favorite"> 
+                Избранное 
+            </label> 
+            <br><br> 
+            <button type="submit">Создать</button> 
+            <button type="button" id="close-modal">Отмена</button> 
+        </form> 
+    </div> 
+     
+    <script src="scripts.js"></script> 
+</body> 
+</html>

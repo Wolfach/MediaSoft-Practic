@@ -1,0 +1,124 @@
+
+body {
+    font-family: Arial, sans-serif;    margin: 0;
+    padding: 20px;    background-color: #f3f4f6;
+    color: #333;    line-height: 1.6;
+}
+h1 {    font-size: 28px;
+    text-align: center;    margin-bottom: 20px;
+    color: #222;}
+input, button {
+    font-size: 16px;    outline: none;
+}
+#search {
+    width: calc(100% - 150px);    padding: 10px;
+    border: 1px solid #ddd;    border-radius: 5px;
+    margin-right: 10px;    transition: border-color 0.3s ease;
+}
+#search:focus {    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);}
+#add-contact {
+    padding: 10px 20px;    background-color: #4caf50;
+    color: white;    border: none;
+    border-radius: 5px;    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#add-contact:hover {    background-color: #45a049;
+}
+.contact-list {
+    margin-top: 20px;}
+.contact-card {
+    display: flex;    align-items: center;
+    justify-content: space-between;    background-color: #fff;
+    border: 1px solid #ddd;    padding: 15px;
+    border-radius: 8px;    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;}
+
+.contact-card:hover {    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);}
+.contact-info {
+    display: flex;    align-items: center;
+    gap: 15px;}
+.contact-info img {
+    width: 50px;    height: 50px;
+    border-radius: 50%;    object-fit: cover;
+    border: 2px solid #ddd;}
+.contact-info div {
+    display: flex;    flex-direction: column;
+    gap: 4px;}
+.contact-info div div:first-child {
+    font-weight: bold;    font-size: 18px;
+}
+.contact-info div div:last-child {    color: #666;
+}
+.actions button {
+    background: none;    border: none;
+    cursor: pointer;
+    font-size: 20px;    color: #666;
+    padding: 5px;    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;}
+.actions button:hover {
+    background-color: #f0f0f0;    color: #000;
+}
+.actions button:first-child {    color: #f39c12;
+}
+.actions button:last-child {    color: #e74c3c;
+}
+#add-modal {
+    position: fixed;    top: 50%;
+    left: 50%;    transform: translate(-50%, -50%);
+    width: 90%;    max-width: 400px;
+    background: white;    border: 1px solid #ddd;
+    border-radius: 10px;    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;    padding: 20px;
+    display: none;}
+
+#add-modal.active {    display: block;
+}
+#add-modal h2 {    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;    color: #333;
+}
+#add-modal form {    display: flex;
+    flex-direction: column;    gap: 15px;
+}
+#add-modal input[type="text"] {    font-size: 16px;
+    padding: 10px;    border: 1px solid #ddd;
+    border-radius: 5px;    width: 100%;
+    transition: border-color 0.3s ease;}
+#add-modal input[type="text"]:focus {
+    border-color: #4caf50;    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+#add-modal input[type="checkbox"] {    transform: scale(1.2);
+    margin-right: 5px;}
+#add-modal button {
+    padding: 10px;    font-size: 16px;
+    border: none;    border-radius: 5px;
+    cursor: pointer;
+}
+#add-modal button[type="submit"] {    background-color: #4caf50;
+    color: white;    transition: background-color 0.3s ease;
+}
+#add-modal button[type="submit"]:hover {    background-color: #45a049;
+}
+#add-modal button[type="button"] {    background-color: #e74c3c;
+    color: white;    transition: background-color 0.3s ease;
+}
+#add-modal button[type="button"]:hover {    background-color: #c0392b;
+}
+body.modal-open {
+    overflow: hidden;    background: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 600px) {
+    #search {        width: 100%;
+        margin-bottom: 10px;    }
+    #add-contact {
+        width: 100%;    }
+    .contact-card {
+        flex-direction: column;        align-items: flex-start;
+    }
+    .actions {        margin-top: 10px;
+display: flex;        gap: 10px;
+        width: 100%;        justify-content: space-around;
+    }}
